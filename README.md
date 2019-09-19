@@ -9,20 +9,21 @@ databases.
 ### Dependencies
 
 * Python3 with virtualenv and pip
-* ogr2ogr (on path)
-* client for target database(s) and SQLCl, psql, etc on Path
+* A client for target database(s) with SQLCl, psql, etc on Path
+* (for now) Windows x64 only
+* (for now) If writing to Oracle ogr2ogr (on path) with OCI driver.  Other standard ogr2ogr drivers are included    
+
 
 ### Setup
 
-Start up a virtualenv something like
+Start up a virtualenv and pip install the peeps
 
-    `virtualenv %USERPROFILE%\.virtualenv\etltender`
-    `%USERPROFILE%\.virtualenv\etltender\Scripts\activate.bat`
+    `setenv.bat`
 
-Install dependencies
+If ogr2ogr with OCI driver isn't already set, QGIS is usually a good source
 
-    `pip install -r requirements.txt`
-
+    `set PATH="C:\Program Files\QGIS 3.4\bin";%PATH%`
+    `set GDAL_DATA="C:\Program Files\QGIS 3.4\share\gdal"`
 
 ### Test 
 

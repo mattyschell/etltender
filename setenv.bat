@@ -1,21 +1,14 @@
-REM notes on setup from python 3.7
-REM reminder on standard setup patterns, hard coded for now
-set PATH=c:\Users\mschell\AppData\Local\Programs\Python\Python37
-set PATH=%PATH%;c:\Users\mschell\AppData\Local\Programs\Python\Python37\Scripts
-pip install virtualenv
-REM mkdir %USERPROFILE%\.virtualenv
+REM ME ONLY TAKE THIS OUT LATER FREND
+set PATH=c:\Users\mschell\AppData\Local\Programs\Python\Python37;%PATH%
+set PATH=c:\Users\mschell\AppData\Local\Programs\Python\Python37\Scripts;%PATH%
 virtualenv %USERPROFILE%\.virtualenv\etltender
 REM this puts virtualenv \Scripts at front of path
 %USERPROFILE%\.virtualenv\etltender\Scripts\activate.bat
-REM may need this later
-REM set PATH=%PATH%;"C:\Program Files\QGIS 3.4\bin"
-pip install six
-pip install python-dateutil
-pip install pytz
-pip install requests
-REM this earlier version avoids error "Proj executable not found. Please set PROJ_DIR variable."
-pip install pyproj==1.9.6 
-pip install OWSLib
-pip freeze --requirements requirements.txt
-REM from any virtualenv
-REM pip install -r requirements.txt
+REM from any virtualenv, includes OWSLib
+pip install -r requirements.txt
+REM wheel downloaded from the famous GOHLKE on 20190919 
+REM https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
+REM Python 37 on x64 Windows, includes full ogr distribution and python bindings
+REM Does not include the OCI driver that would be too EZ
+REM will install to the virtual env
+pip install src\main\resources\GDAL-3.0.1-cp37-cp37m-win_amd64.whl

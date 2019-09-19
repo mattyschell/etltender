@@ -1,7 +1,7 @@
 # mschell! 20190913
 
 import sys
-import wfstender
+from wfstender import wfsmanager
 import ogrtender
 
 def usage():
@@ -16,12 +16,19 @@ def usage():
 
 def main (sourceurl,
           sourcelayer,
+          tempfile,
           targetconn,
           targettemplate,
           targetname,
           targetreplace='N'):
 
     print("in main")
+
+    sourcewfs = wfsmanager(sourceurl)
+
+    sourcewfs.download(sourcelayer
+                      ,tempfile)
+
 
 
 
@@ -32,17 +39,28 @@ if __name__ == "__main__":
     #    usage()
     #    raise ValueError('Expected 7 inputs, see usage (may be in log')
 
+    # python etltender.py
+    # "https://dservices.arcgis.com/v09SvJE7IY8GgvSx/arcgis/services/DDC_IFRPROJECTS_PUBLIC/WFSServer"
+    # "DDC_IFRPROJECTS_PUBLIC:DDC_Active_Infrastructure_Projects"
+    # "C:/Temp/ddcinfra.gml"
+    # C
+    # D
+    # E    
+    # F
+
     sourceurl = sys.argv[1]
     sourcelayer = sys.argv[2]
-    targetconn = sys.argv[3]
-    targettemplate = sys.argv[4]
-    targetname = sys.argv[5]
-    targetreplace = sys.argv[6]
+    tempfile = sys.argv[3]
+    targetconn = sys.argv[4]
+    targettemplate = sys.argv[5]
+    targetname = sys.argv[6]
+    targetreplace = sys.argv[7]
 
     print("before main")
     
     main(sourceurl,
          sourcelayer,
+         tempfile,
          targetconn,
          targettemplate,
          targetname,

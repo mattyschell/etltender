@@ -1,0 +1,22 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>valid</Name>
+    <ElementPath>valid</ElementPath>
+    <!--POLYGON-->
+    <GeometryType>3</GeometryType>
+    <SRSName>EPSG:2263</SRSName>
+    <DatasetSpecificInfo>
+      <FeatureCount>1</FeatureCount>
+      <ExtentXMin>979249.68690</ExtentXMin>
+      <ExtentXMax>979385.74977</ExtentXMax>
+      <ExtentYMin>189442.03423</ExtentYMin>
+      <ExtentYMax>189591.70338</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>webscope</Name>
+      <ElementPath>webscope</ElementPath>
+      <Type>String</Type>
+      <Width>90</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>
