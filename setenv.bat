@@ -11,4 +11,4 @@ REM https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
 REM Python 37 on x64 Windows, includes full ogr distribution and python bindings
 REM Does not include the OCI driver that would be too EZ
 REM will install to the virtual env
-pip install src\main\resources\GDAL-3.0.1-cp37-cp37m-win_amd64.whl
+pip install src\main\resources\GDAL-3.0.1-cp37-cp37m-win_amd64.whl 

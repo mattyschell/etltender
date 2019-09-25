@@ -3,8 +3,9 @@
 ) 
 AUTHID CURRENT_USER AS
    --Mschell! 
-   --rewire a view from blue to green or green to blue
-   --makes strong assumptions about naming conventions
+   -- rewire a view from blue to green or green to blue
+   -- makes lazy but firm assumptions about naming conventions
+   -- locked in throughout this project
    psql                 VARCHAR2(4000);
    cols                 VARCHAR2(12000);
    text_long            LONG; --ick
@@ -25,9 +26,8 @@ BEGIN
          || 'WHERE a.view_name = :p1 ';
     --includes the select
     EXECUTE IMMEDIATE psql INTO text_long USING UPPER(p_view);
-    IF UPPER(TO_CHAR(text_long)) LIKE ('% FROM ' || UPPER(p_view) || '_B%')
+    IF UPPER(TO_CHAR(text_long)) LIKE ('%FROM%' || UPPER(p_view) || '_B')
     THEN
-        --raise_application_error(-20001,'yeah');
         current_table := p_view || '_b';
         new_table     := p_view || '_g';
     ELSE
@@ -37,10 +37,10 @@ BEGIN
     new_select := REPLACE(UPPER(TO_CHAR(text_long))
                          ,UPPER(current_table)
                          ,UPPER(new_table));
-    --EXECUTE IMMEDIATE 'create or replace view '
-    --                || p_view || ' ('
-    --                || cols || ') AS '
-    --                || new_select;
+    EXECUTE IMMEDIATE 'create or replace view '
+                    || p_view || ' ('
+                    || cols || ') AS '
+                    || new_select;
 END REWIRE_VIEW;
 /
 EXIT
