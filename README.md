@@ -3,7 +3,7 @@
 ### 
 
 The ETLTender project is intendered to extract spatial data from some sources
-(Web Feature Service, Socrata Open Data, etc) and load them to internal 
+(Web Feature Service, Socrata Open Data, etc) and load them tenderly to internal 
 databases.  
 
 ### Dependencies
