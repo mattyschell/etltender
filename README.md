@@ -19,16 +19,19 @@ transform it into a dumpster fire of one-offs and regrets.
 
 Start up a virtualenv and pip install the peeps
 
-    `setenv.bat`
+```shell
+> setenv.bat
+```
 
 If ogr2ogr with OCI driver isn't already set, QGIS is usually a solid source
 
-    `set PATH="C:\Program Files\QGIS 3.4\bin";%PATH%`
-    `set GDAL_DATA="C:\Program Files\QGIS 3.4\share\gdal"`
+```shell
+> set PATH="C:\Program Files\QGIS 3.4\bin";%PATH%
+> set GDAL_DATA="C:\Program Files\QGIS 3.4\share\gdal"
+```
 
 ### Test 
 
-
-
-
-### Sample 
+```shell
+> test_all.bat
+```
