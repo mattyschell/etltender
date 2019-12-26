@@ -1,0 +1,2 @@
+python test_ogrtender.py
+python test_oracletender.py
