@@ -1,6 +1,6 @@
 certifi==2023.7.22
 chardet==3.0.4
-idna==2.8
+idna==3.7
 numpy==1.22.0
 OWSLib==0.28.1
 pyproj==1.9.6
